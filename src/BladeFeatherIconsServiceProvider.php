@@ -11,7 +11,7 @@ class BladeBootstrapIconsServiceProvider extends ServiceProvider
     {
         $this->app->make(Factory::class)->add('feather-icons', [
             'path' => __DIR__ . '/../resources/svg',
-            'prefix' => 'fi',
+            'prefix' => 'feathericon',
         ]);
 
         if ($this->app->runningInConsole()) {
