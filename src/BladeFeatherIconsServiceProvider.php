@@ -1,11 +1,11 @@
 <?php
 
-namespace Brunocfalcao\FeatherBootstrapIcons;
+namespace Brunocfalcao\BladeFeatherIcons;
 
 use BladeUI\Icons\Factory;
 use Illuminate\Support\ServiceProvider;
 
-class BladeBootstrapIconsServiceProvider extends ServiceProvider
+class BladeFeatherIconsServiceProvider extends ServiceProvider
 {
     public function boot()
     {

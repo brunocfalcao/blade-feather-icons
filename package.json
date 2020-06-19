@@ -6,7 +6,8 @@
     },
     "devDependencies": {
         "cross-env": "^7.0.2",
-        "laravel-mix": "^5.0.4",
-        "bootstrap-icons": "^1.0.0-alpha4"
-    }
+        "laravel-mix": "^5.0.4"
+    },
+    "dependencies": {
+        "feather-icons": "^4.28.0"
 }
