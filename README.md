@@ -1,8 +1,5 @@
 # Blade Feather Icons
 
-<a href="https://github.com/brunocfalcao/blade-feather-icons/actions?query=workflow%3ATests">
-    <img src="https://github.com/brunocfalcao/blade-feather-icons/workflows/Tests/badge.svg" alt="Tests">
-</a>
 <a href="https://packagist.org/packages/brunocfalcao/blade-feather-icons">
     <img src="https://poser.pugx.org/brunocfalcao/blade-feather-icons/v/stable.svg" alt="Latest Stable Version">
 </a>
