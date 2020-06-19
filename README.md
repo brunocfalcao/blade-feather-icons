@@ -67,6 +67,7 @@ Check out the [CHANGELOG](CHANGELOG.md) in this repository for all the recent ch
 ## Maintainers
 
 Blade Feather Icons is developed and maintained by [Bruno Falcao](https://github.com/brunocfalcao).
+You can follow me on [Twitter](https://twitter.com/brunocfalcao).
 
 Blade Icons is developed and maintained by [Dries Vints](https://driesvints.com).
 
