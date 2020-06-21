@@ -16,7 +16,7 @@ class BladeFeatherIconsServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../resources/svg' => public_path('vendor/blade-feather-icons'),
+                __DIR__ . '/../resources/svg' => public_path('vendor/brunocfalcao/blade-feather-icons'),
             ], 'blade-feather-icons');
         }
     }

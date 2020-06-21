@@ -53,7 +53,19 @@ php artisan vendor:publish --tag=blade-feather-icons --force
 Then use them in your views like:
 
 ```blade
-<img src="{{ asset('vendor/blade-feather-icons/alert-triangle.svg') }}" width="10" height="10"/>
+<img src="{{ asset('vendor/blade-feather-icons/alert-triangle.svg') }}" width="25" height="25"/>
+```
+
+### Update your Feather icons to the latest version
+
+Install the feather icons npm library
+```
+    npm install feather-icons --save
+```
+
+Then copy this line to your webpack.mix file
+```
+    mix.copy('node_modules/feather-icons/dist/icons', 'public/vendor/feather-icons');
 ```
 
 ### Blade Icons
