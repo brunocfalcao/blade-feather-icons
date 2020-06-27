@@ -9,10 +9,12 @@ class BladeFeatherIconsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->app->make(Factory::class)->add('feather-icons', [
-            'path' => __DIR__ . '/../resources/svg',
-            'prefix' => 'feathericon',
-        ]);
+        $this->callAfterResolving(Factory::class, function (Factory $factory) {
+            $factory->add('feather-icons', [
+                'path' => __DIR__ . '/../resources/svg',
+                'prefix' => 'feathericon',
+            ]);
+        });
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
