@@ -5,7 +5,7 @@ namespace Brunocfalcao\BladeFeatherIcons;
 use BladeUI\Icons\Factory;
 use Illuminate\Support\ServiceProvider;
 
-class BladeFeatherIconsServiceProvider extends ServiceProvider
+final class BladeFeatherIconsServiceProvider extends ServiceProvider
 {
     public function register()
     {
@@ -21,7 +21,7 @@ class BladeFeatherIconsServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../resources/svg' => public_path('vendor/brunocfalcao/blade-feather-icons'),
+                __DIR__ . '/../resources/svg' => public_path('vendor/feather-icons'),
             ], 'blade-feather-icons');
         }
     }
