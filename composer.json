@@ -23,7 +23,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
-        "orchestra/testbench": "^10.0",
+        "orchestra/testbench": "^10.6",
         "pestphp/pest": "^4.0"
     },
     "autoload": {
