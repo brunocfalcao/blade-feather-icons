@@ -16,17 +16,6 @@ uses(TestCase::class)->in(__DIR__);
 
 /*
 |--------------------------------------------------------------------------
-| Coverage
-|--------------------------------------------------------------------------
-*/
-
-covers(
-    Brunocfalcao\BladeFeatherIcons\BladeFeatherIconsServiceProvider::class,
-    Brunocfalcao\BladeFeatherIcons\Commands\SyncIconsCommand::class,
-);
-
-/*
-|--------------------------------------------------------------------------
 | Expectations
 |--------------------------------------------------------------------------
 */
