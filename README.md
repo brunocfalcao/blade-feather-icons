@@ -26,8 +26,8 @@ For a full list of available icons, see [the SVG directory](resources/svg) or pr
 
 ## 📋 Requirements
 
-- **PHP**: 8.1 or higher
-- **Laravel**: 9.0 or higher
+- **PHP**: 8.4 or higher
+- **Laravel**: 12.0 or higher
 - **blade-ui-kit/blade-icons**: ^1.0
 
 ## 📦 Installation
