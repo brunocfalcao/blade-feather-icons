@@ -2,50 +2,67 @@ name: Tests
 
 on:
   push:
+    branches: [ main, master, develop ]
   pull_request:
+    branches: [ main, master, develop ]
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * 0'  # Weekly on Sunday
 
 jobs:
-  tests:
+  test:
     runs-on: ubuntu-latest
-
     strategy:
       fail-fast: true
       matrix:
-        php: [7.4, 8.0, 8.1, '8.2']
-        laravel: [10.0, '11.0', '12.0', ^7.0, ^8.0]
+        php: [8.4, 8.3, 8.2, 8.1]
+        laravel: [12, 11, 10, 9]
+        dependency-version: [prefer-lowest, prefer-stable]
         exclude:
-          - laravel: '11.0'
-            php: 7.4
-          - laravel: '11.0'
-            php: 8.0
-          - laravel: '11.0'
+          # Laravel 12 requires PHP 8.2+
+          - laravel: 12
             php: 8.1
-          - laravel: '12.0'
-            php: 7.4
-          - laravel: '12.0'
-            php: 8.0
-          - laravel: '12.0'
+          # Laravel 11 requires PHP 8.2+
+          - laravel: 11
             php: 8.1
 
-    name: P${{ matrix.php }} - L${{ matrix.laravel }}
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
           coverage: none
 
       - name: Install dependencies
         run: |
-          composer require "illuminate/contracts=${{ matrix.laravel }}" --prefer-dist --no-interaction --no-update
-          composer update --prefer-dist --no-interaction --no-progress
+          composer require "laravel/framework:^${{ matrix.laravel }}.0" --no-interaction --no-update
+          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-progress
 
       - name: Execute tests
-        run: vendor/bin/phpunit --verbose
+        run: composer test
+
+  coverage:
+    runs-on: ubuntu-latest
+    name: Coverage
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.4
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
+          coverage: xdebug
+
+      - name: Install dependencies
+        run: composer update --prefer-stable --prefer-dist --no-interaction
+
+      - name: Execute tests with coverage
+        run: composer test-coverage
