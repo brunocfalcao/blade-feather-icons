@@ -2,20 +2,27 @@ name: Tests
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches:
+      - main
+      - master
+      - develop
   pull_request:
-    branches: [ main, master, develop ]
+    branches:
+      - main
+      - master
+      - develop
   schedule:
-    - cron: '0 0 * * 0'  # Weekly on Sunday
+    - cron: '0 0 * * 0'
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     strategy:
       fail-fast: true
       matrix:
         php: [8.4]
-        laravel: [12]
+        laravel: [12, 13]
         dependency-version: [prefer-lowest, prefer-stable]
 
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.dependency-version }}
@@ -41,6 +48,7 @@ jobs:
 
   coverage:
     runs-on: ubuntu-latest
+
     name: Coverage
 
     steps:
