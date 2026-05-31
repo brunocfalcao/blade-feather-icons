@@ -19,7 +19,7 @@
     "require": {
         "php": "^8.4",
         "blade-ui-kit/blade-icons": "^1.0",
-        "illuminate/support": "^12.0"
+        "illuminate/support": "^12.0|^13.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
