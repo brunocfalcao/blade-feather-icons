@@ -3,4 +3,5 @@ composer.lock
 phpunit.xml
 vendor
 .phpunit.result.cache
+.phpunit.cache/
 node_modules/

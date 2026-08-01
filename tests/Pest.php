@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
-use BladeUI\Icons\BladeIconsServiceProvider;
-use Brunocfalcao\BladeFeatherIcons\BladeFeatherIconsServiceProvider;
 use Tests\TestCase;
+
+pest()->tia()
+    ->always()
+    ->locally()
+    ->filtered();
 
 /*
 |--------------------------------------------------------------------------

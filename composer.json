@@ -23,8 +23,8 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
-        "orchestra/testbench": "^10.6",
-        "pestphp/pest": "^4.0"
+        "orchestra/testbench": "^11.0",
+        "pestphp/pest": "^5.0"
     },
     "autoload": {
         "psr-4": {
@@ -37,8 +37,9 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
+        "test": "./run-pest-tia.sh --filtered",
+        "test:full": "./run-pest-tia.sh --fresh",
+        "test-coverage": "./run-pest-tia.sh --fresh --coverage",
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
         "format-check": "vendor/bin/php-cs-fixer fix --dry-run --diff --allow-risky=yes"
     },
