@@ -1,5 +1,11 @@
 # Blade Feather Icons
 
+## Changes in v6.0.4
+
+Adds shared contributor and agent guidance in `PROJECT.md`, with thin
+`AGENTS.md` and `CLAUDE.md` pointers. Icon files, rendering, configuration,
+commands and dependency requirements are unchanged.
+
 <a href="https://packagist.org/packages/brunocfalcao/blade-feather-icons">
     <img src="https://poser.pugx.org/brunocfalcao/blade-feather-icons/v/stable.svg" alt="Latest Stable Version">
 </a>
